@@ -4,7 +4,7 @@ Description=Run script every hour
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /home/student/script/script_dbus.py 
+ExecStart=/usr/bin/python3 /usr/lib/python3/site-packages/dbustimer/script_dbus.py
 
 [Install]
 WantedBy=multi-user.target

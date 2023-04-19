@@ -1,5 +1,5 @@
 Name: dbustimer
-Version: 0.1
+Version: 0.4
 Release: alt1
 
 Summary: Display system time
@@ -22,14 +22,14 @@ This program displays notifications about the system time with a frequency of on
 
 mkdir -p \
 	%buildroot%python3_sitelibdir_noarch/%name/
-install -Dm0644 script_dbus.py \
+install -Dm0755 script_dbus.py \
 	%buildroot%python3_sitelibdir_noarch/%name/
 
 mkdir -p \
 	%buildroot%_sysconfdir/xdg/systemd/user/
 cp script_dbus.timer script_dbus.service \
 	%buildroot%_sysconfdir/xdg/systemd/user/
-ls -l %buildroot%_sysconfdir/xdg/systemd/user/
+
 
 
 %files
@@ -38,5 +38,6 @@ ls -l %buildroot%_sysconfdir/xdg/systemd/user/
 /etc/xdg/systemd/user/script_dbus.timer
 
 %changelog
-* Thu Apr 13 2023 Danila Skachedubov <dan@altlinux.org> 0.1-alt1
+* Thu Apr 13 2023 Danila Skachedubov <dan@altlinux.org> 0.4-alt1
 - Update system
+- Changed access rights
